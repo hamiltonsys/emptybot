@@ -17,7 +17,7 @@ class GachaSystem(commands.Cog):
                 return await ctx.send("ムチャ言うな")
             with open(f"/app/list/{category}.txt") as f:
                 category_contents = [s.strip() for s in f.readlines()]
-            await ctx.send(" ".join(random.sample(category_contents, count)))
+            await ctx.send("\n".join(random.sample(category_contents, count)))
 
         except FileNotFoundError:
             return await ctx.send("そんなガチャないよ")
